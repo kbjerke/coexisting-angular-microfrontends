@@ -8,15 +8,16 @@
   <base href="/" />
 </head>
 <body>
+  <script src="https://unpkg.com/core-js-bundle@3.0.1/minified.js"></script>
   <script src="https://unpkg.com/zone.js"></script>
-  <script src="https://unpkg.com/single-spa@4.3.0/lib/umd/single-spa.min.js"></script>
+  <script src="https://unpkg.com/single-spa@4.3.2/lib/umd/single-spa.min.js"></script>
   <script src="/navbar/dist/navbar/main.js"></script>
   <script src="/app1/dist/app1/main.js"></script>
   <script src="/app2/dist/app2/main.js"></script>
   <script>
-    singleSpa.registerApplication('navbar', window.navbar.default, location => true);
-    singleSpa.registerApplication('app1', window.app1.default, location => location.pathname.startsWith('/app1'));
-    singleSpa.registerApplication('app2', window.app2.default, location => location.pathname.startsWith('/app2'));
+    singleSpa.registerApplication('navbar', window.navbar.default, function() { return true; });
+    singleSpa.registerApplication('app1', window.app1.default, function(location) { return location.pathname.startsWith('/app1'); });
+    singleSpa.registerApplication('app2', window.app2.default, function(location) { return location.pathname.startsWith('/app2'); });
     singleSpa.start();
   </script>
 </body>
