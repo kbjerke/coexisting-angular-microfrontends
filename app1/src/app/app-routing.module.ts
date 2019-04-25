@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
 
 const routes: Routes = [
-  { path: '**', component: EmptyRouteComponent },
+  { path: '', pathMatch: 'full', component: EmptyRouteComponent },
+  { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

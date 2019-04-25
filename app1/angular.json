@@ -14,6 +14,7 @@
           "builder": "single-spa-angular:build",
           "options": {
             "outputPath": "dist/app1",
+            "deployUrl": "/app1/dist/app1/",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",

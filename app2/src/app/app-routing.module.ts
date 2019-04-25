@@ -4,10 +4,9 @@ import { EmptyRouteComponent } from './empty-route/empty-route.component';
 import { SubrouteComponent } from './subroute/subroute.component';
 
 const routes: Routes = [
-  /*{ path: '', pathMatch: 'full', component: EmptyRouteComponent },*/
+  { path: '', pathMatch: 'full', component: EmptyRouteComponent },
   { path: 'subroute', component: SubrouteComponent },
-  { path: '**', component: EmptyRouteComponent },
-  /*{ path: '**', redirectTo: '' },*/
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
